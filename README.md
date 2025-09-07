@@ -10,9 +10,7 @@ This project aims to predict electricity demand using historical load data and m
 
 ### Data Sources
 - **Load Data**: ERCOT electricity demand (2018-2024, hourly resolution)
-  - **Data source**: https://www.ercot.com/gridinfo/load/load_hist
 - **Weather Data**: Meteorological data from 3 ASOS stations (BKS, JDD, TME)
-  - **Data source**: https://mesonet.agron.iastate.edu/request/download.phtml?network=TX_ASOS#
     - Temperature (°C)
     - Relative humidity (%)
     - Wind speed (m/s)
@@ -195,4 +193,5 @@ This project is for research and educational purposes. Please ensure proper attr
 ---
 
 **Note**: This project demonstrates advanced deep learning techniques for electricity load forecasting and can serve as a foundation for similar time series prediction tasks in the energy sector.
+
 
