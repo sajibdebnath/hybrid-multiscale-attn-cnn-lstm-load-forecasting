@@ -1,416 +1,99 @@
-# ⚡ Hybrid Multi-Scale Deep Learning Enhanced Electricity Load Forecasting Using Attention-Based Convolutional Neural Network and LSTM Model
+# ⚡ Hybrid CNN-LSTM-Attention Electricity Load Forecasting
 
 <div align="center">
 
-<!-- Repository Stats -->
-![GitHub stars](https://img.shields.io/github/stars/sajibdebnath/hybrid-multiscale-attn-cnn-lstm-load-forecasting?style=for-the-badge&color=yellow)
-![GitHub forks](https://img.shields.io/github/forks/sajibdebnath/hybrid-multiscale-attn-cnn-lstm-load-forecasting?style=for-the-badge&color=blue)
-![GitHub watchers](https://img.shields.io/github/watchers/sajibdebnath/hybrid-multiscale-attn-cnn-lstm-load-forecasting?style=for-the-badge&color=green)
-![GitHub issues](https://img.shields.io/github/issues/sajibdebnath/hybrid-multiscale-attn-cnn-lstm-load-forecasting?style=for-the-badge&color=red)
+![Python](https://img.shields.io/badge/python-3.8+-blue.svg)
+![TensorFlow](https://img.shields.io/badge/TensorFlow-2.x-orange.svg)
+![License](https://img.shields.io/badge/license-MIT-green.svg)
 
-<!-- Tech Stack Badges -->
-![Python](https://img.shields.io/badge/python-v3.7+-blue.svg?style=flat-square&logo=python)
-![TensorFlow](https://img.shields.io/badge/TensorFlow-2.x-orange.svg?style=flat-square&logo=tensorflow)
-![Keras](https://img.shields.io/badge/Keras-2.x-red.svg?style=flat-square&logo=keras)
-![Pandas](https://img.shields.io/badge/Pandas-1.x-purple.svg?style=flat-square&logo=pandas)
-![NumPy](https://img.shields.io/badge/NumPy-1.x-lightblue.svg?style=flat-square&logo=numpy)
-![Matplotlib](https://img.shields.io/badge/Matplotlib-3.x-green.svg?style=flat-square&logo=plotly)
+**🏆 R² = 0.9677 | MAPE = 2.53%**
 
-<!-- Project Info -->
-![License](https://img.shields.io/badge/license-MIT-green.svg?style=flat-square)
-![Status](https://img.shields.io/badge/status-active-brightgreen.svg?style=flat-square)
-![Contributions](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat-square)
-![Last Commit](https://img.shields.io/github/last-commit/sajibdebnath/hybrid-multiscale-attn-cnn-lstm-load-forecasting?style=flat-square)
-
-**🏆 Best Performance: R² = 0.9677 | MAPE = 2.53% | State-of-the-Art Results 🏆**
-
-*A comprehensive deep learning project for electricity load forecasting using ERCOT (Electric Reliability Council of Texas) data*
-
-[📊 View Results](#-results) • [🚀 Quick Start](#-getting-started) • [📖 Documentation](#-project-structure) • [🤝 Contributing](#-contributing)
+*Deep learning models for electricity demand forecasting using ERCOT data and weather features*
 
 </div>
-
----
-
-## 📋 Table of Contents
-- [🎯 Overview](#overview)
-- [📊 Dataset](#-dataset)
-- [📈 Results](#-results)
-- [🛠️ Technology Stack](#️-technology-stack)
-- [🏗️ Model Architectures](#️-model-architectures)
-- [🚀 Getting Started](#-getting-started)
-- [📁 Project Structure](#-project-structure)
-- [🔬 Key Features](#-key-features)
-- [🎯 Key Insights](#-key-insights)
-- [🛠️ Technical Implementation](#️-technical-implementation)
-- [🔮 Future Research](#-future-research-directions)
-- [📚 References](#-references--data-sources)
-- [📄 License](#-license)
 
 ---
 
 ## 🎯 Overview
 
-This research develops advanced deep learning models to predict electricity demand using historical load data and meteorological variables. The study compares four different neural network architectures and demonstrates that the proposed hybrid CNN-LSTM-Attention model significantly outperforms traditional approaches, achieving exceptional accuracy with comprehensive feature engineering and data preprocessing.
+Deep learning models for electricity demand forecasting using ERCOT data (2018-2024) and weather features. The hybrid CNN-LSTM-Attention model achieves 96.77% accuracy by combining convolutional layers, LSTM networks, and attention mechanisms.
 
 ## 📊 Dataset
 
-### Data Sources
-- **Load Data**: ERCOT electricity demand (2018-2024, hourly resolution)
-  - Native load data files for each year (Excel format)
-  - Comprehensive 7-year historical dataset
-- **Weather Data**: Meteorological data from 3 ASOS stations
-  - **BKS Station**: Blackland Army Airfield
-  - **JDD Station**: Laredo International Airport
-  - **TME Station**: Houston Executive Airport
-  - **Combined Weather Dataset**: Integrated ASOS weather data
-
-### Dataset Features
-- **Target Variable**: ERCOT electricity demand (MW)
-- **Weather Features**:
-  - Temperature (°C) - current, max, min
-  - Relative humidity (%)
-  - Wind speed (m/s)
-  - Feels-like temperature (°C)
-  - Precipitation (mm)
-  - Atmospheric pressure
-- **Temporal Features**:
-  - Month encoding
-  - Weekday encoding
-  - Holiday labels (US federal holidays)
-- **Time Window**: 24-hour lookback for sequence modeling
-- **Final Dataset**: `Final_dataset_ERCOT_v2.csv` (preprocessed and cleaned)
+- **Load Data**: ERCOT electricity demand (2018-2024, hourly)
+- **Weather Data**: 3 ASOS stations (temperature, humidity, wind, pressure)
+- **Features**: Temperature, weather variables, temporal patterns, US holidays
+- **Final Dataset**: `Final_dataset_ERCOT_v2.csv`
 
 
 ## 📈 Results
 
-<div align="center">
-
-### 🏆 **Performance Comparison**
-
-| 🤖 Model | 📊 R² Score | 📉 MAE (MW) | 📐 RMSE (MW) | 🎯 MAPE |
-|-----------|-------------|-------------|--------------|---------|
-| 🔹 LSTM Baseline | 0.9042 | 2,393.47 | 3,298.21 | 3.84% |
-| 🔸 CNN-LSTM | 0.9380 | 1,984.19 | 2,654.50 | 3.51% |
-| 🔶 Attention-LSTM | 0.9270 | 2,193.70 | 2,878.90 | 3.92% |
-| **🌟 Hybrid CNN-LSTM-Attention** | **🥇 0.9677** | **🥇 1,430.55** | **🥇 1,915.17** | **🥇 2.53%** |
-
-</div>
+| Model | R² Score | MAPE | MAE (MW) | RMSE (MW) |
+|-------|----------|------|----------|-----------|
+| LSTM | 0.9042 | 3.84% | 2,393.47 | 3,298.21 |
+| CNN-LSTM | 0.9380 | 3.51% | 1,984.19 | 2,654.50 |
+| Attention-LSTM | 0.9270 | 3.92% | 2,193.70 | 2,878.90 |
+| **Hybrid CNN-LSTM-Attention** | **0.9677** | **2.53%** | **1,430.55** | **1,915.17** |
 
 
-## �️ Technology Stack
+## 🛠️ Technology Stack
 
-<div align="center">
+- **Deep Learning**: TensorFlow, Keras
+- **Data Processing**: Pandas, NumPy
+- **Visualization**: Matplotlib, Seaborn
+- **Analysis**: Jupyter Notebook
 
-### 🔧 **Core Technologies**
+## 🚀 Getting Started
 
-</div>
-
-<table align="center">
-<tr>
-<td align="center"><strong>🧠 Deep Learning</strong></td>
-<td align="center"><strong>📊 Data Science</strong></td>
-<td align="center"><strong>🔬 Analysis</strong></td>
-<td align="center"><strong>📈 Visualization</strong></td>
-</tr>
-<tr>
-<td align="center">
-<img src="https://img.shields.io/badge/TensorFlow-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white"/><br/>
-<img src="https://img.shields.io/badge/Keras-D00000?style=for-the-badge&logo=keras&logoColor=white"/><br/>
-<img src="https://img.shields.io/badge/scikit--learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white"/>
-</td>
-<td align="center">
-<img src="https://img.shields.io/badge/pandas-150458?style=for-the-badge&logo=pandas&logoColor=white"/><br/>
-<img src="https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white"/><br/>
-<img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white"/>
-</td>
-<td align="center">
-<img src="https://img.shields.io/badge/Jupyter-F37626?style=for-the-badge&logo=jupyter&logoColor=white"/><br/>
-<img src="https://img.shields.io/badge/Google_Colab-F9AB00?style=for-the-badge&logo=google-colab&logoColor=white"/><br/>
-<img src="https://img.shields.io/badge/VS_Code-007ACC?style=for-the-badge&logo=visual-studio-code&logoColor=white"/>
-</td>
-<td align="center">
-<img src="https://img.shields.io/badge/Matplotlib-11557c?style=for-the-badge&logo=python&logoColor=white"/><br/>
-<img src="https://img.shields.io/badge/Seaborn-3776AB?style=for-the-badge&logo=python&logoColor=white"/><br/>
-<img src="https://img.shields.io/badge/Plotly-3F4F75?style=for-the-badge&logo=plotly&logoColor=white"/>
-</td>
-</tr>
-</table>
-
-### 🏗️ **Architecture Components**
-
-<div align="center">
-
-| Component | Technology | Purpose | Performance |
-|-----------|------------|---------|-------------|
-| 🧠 **Neural Networks** | TensorFlow/Keras | Deep Learning Framework | 99%+ Accuracy |
-| 🔄 **LSTM Layers** | Bidirectional LSTM | Sequential Data Processing | Long-term Dependencies |
-| 🔍 **CNN Layers** | 1D Convolution | Feature Extraction | Pattern Recognition |
-| 🎯 **Attention** | Multi-Head Attention | Focus Mechanism | Temporal Patterns |
-| 📊 **Data Pipeline** | Pandas/NumPy | Data Processing | Scalable & Efficient |
-| 📈 **Visualization** | Matplotlib/Seaborn | Results Analysis | Interactive Charts |
-
-</div>
-
----
-
-## �🚀 Getting Started
-
-<div align="center">
-
-### ⚡ **Quick Setup Guide**
-
-</div>
-
-> 🎯 **Ready to start forecasting?** Follow these simple steps to get up and running!
-
-### 📦 **Requirements & Installation**
-
-<details>
-<summary><b>🔧 Click to view detailed requirements</b></summary>
-
-#### 🐍 **Python Environment**
-```bash
-# Recommended: Python 3.8+ (tested on 3.8, 3.9, 3.10)
-python --version  # Should be >= 3.8
-```
-
-#### 📋 **Core Dependencies (requirements.txt)**
-```txt
-# Deep Learning Framework
-tensorflow>=2.8.0
-keras>=2.8.0
-
-# Data Science Stack
-pandas>=1.4.0
-numpy>=1.21.0
-scikit-learn>=1.0.0
-
-# Visualization
-matplotlib>=3.5.0
-seaborn>=0.11.0
-plotly>=5.0.0
-
-# Utility Libraries
-holidays>=0.14
-tqdm>=4.64.0
-openpyxl>=3.0.0
-
-# Optional: GPU Support (if available)
-tensorflow-gpu>=2.8.0  # For GPU acceleration
-```
-
-#### ⚡ **Quick Installation**
-```bash
-# Option 1: Install from requirements.txt (recommended)
-pip install -r requirements.txt
-
-# Option 2: Manual installation
-pip install tensorflow pandas numpy matplotlib seaborn scikit-learn holidays tqdm openpyxl
-
-# Option 3: For Conda users
-conda install tensorflow pandas numpy matplotlib seaborn scikit-learn
-pip install holidays tqdm openpyxl
-```
-
-#### 🔧 **System Requirements**
-- **OS**: Windows 10+, macOS 10.14+, Ubuntu 18.04+
-- **RAM**: Minimum 8GB (16GB+ recommended for large datasets)
-- **Storage**: 5GB+ free space for data and models
-- **GPU** (Optional): NVIDIA GPU with CUDA support for faster training
-
-</details>
-
-### 🚀 **Cloud Setup (Google Colab)**
-```python
-# For Google Colab users - run this first
-from google.colab import drive
-drive.mount('/content/drive')
-
-# Install additional packages if needed
-!pip install holidays tqdm openpyxl
-```
-
-### Environment Setup
-```python
-# The project uses deterministic operations for reproducibility
-SEED = 42
-os.environ['PYTHONHASHSEED'] = str(SEED)
-os.environ['TF_DETERMINISTIC_OPS'] = '1'
-tf.config.experimental.enable_op_determinism()
-```
-
-
-
-#### 1. 📥 **Data Cleaning & Integration**
-   ```python
-   # Navigate to: Data cleaning/ERCOT_data_cleaning.ipynb
-   # Integrates load data (2018-2024) with weather data from 3 ASOS stations
-   # Outputs: Final_dataset_ERCOT_v2.csv
-   ```
-
-#### 2. 🔍 **Exploratory Data Analysis**:
-   ```python
-   # Navigate to: Data Preprocessing/data_analytic_and_preprocessing.ipynb
-   # Performs comprehensive EDA, feature engineering, correlation analysis
-   # Generates visualizations and statistical insights
-   ```
-
-#### 3. 🔗 **Correlation Analysis**:
-   ```python
-   # Navigate to: Correlation Analysis/Correlation Analysis.ipynb
-   # Analyzes feature correlations and relationships
-   ```
-
-#### 4. 🤖 **Model Training & Evaluation**:
-   ```python
-   # Navigate to: Notebook/updated_EROCT.ipynb
-   # Trains all 4 models: LSTM, CNN-LSTM, Attention-LSTM, Hybrid CNN-LSTM-Attention
-   # Generates performance comparisons and visualizations
-   # Saves performance metrics to CSV
-   ```
-
-
-### 🚀 **Quick Start**
+### Installation
 ```bash
 # Clone repository
 git clone https://github.com/sajibdebnath/hybrid-multiscale-attn-cnn-lstm-load-forecasting.git
 cd hybrid-multiscale-attn-cnn-lstm-load-forecasting
 
 # Install dependencies
-pip install -r requirements.txt
+pip install tensorflow pandas numpy matplotlib seaborn scikit-learn holidays
 
-# Run the main notebook
+# Run main notebook
 jupyter notebook "Notebook/updated_EROCT.ipynb"
 ```
 
-> 🎯 **Pro Tip**: All models are trained automatically with reproducible results using SEED=42!
+
+### Workflow
+1. **Data Cleaning**: `Data cleaning/ERCOT_data_cleaning.ipynb`
+2. **Data Analysis**: `Data Preprocessing/data_analytic_and_preprocessing.ipynb`
+3. **Model Training**: `Notebook/updated_EROCT.ipynb`
 
 ## 📁 Project Structure
 
-<div align="center">
-
-### 🗂️ **Repository Layout**
-
-</div>
-
 ```
-hybrid-multiscale-attn-cnn-lstm-load-forecasting/
 ├── Data/                               # Dataset files
-│   ├── Final_dataset_ERCOT_v2.csv     # Main processed dataset
-│   ├── Load data/                      # Raw ERCOT load data (2018-2024)
-│   │   ├── Native_Load_2018.xlsx
-│   │   ├── Native_Load_2019.xlsx
-│   │   ├── Native_Load_2020.xlsx
-│   │   ├── Native_Load_2021.xlsx
-│   │   ├── Native_Load_2022.xlsx
-│   │   ├── Native_Load_2023.xlsx
-│   │   └── Native_Load_2024.xlsx
-│   └── Weather data/                   # Meteorological data from ASOS stations
-│       ├── asos_hourly_BKS.csv        # Blackland Army Airfield
-│       ├── asos_hourly_JDD.csv        # Laredo International Airport
-│       ├── asos_hourly_TME.csv        # Houston Executive Airport
-│       └── asos_weather_data.csv      # Combined weather dataset
-├── Correlation Analysis/               # Feature correlation analysis
-│   └── Correlation Analysis.ipynb
-├── Data cleaning/                      # Data cleaning and integration
-│   └── ERCOT_data_cleaning.ipynb     # Load and weather data integration
+│   ├── Final_dataset_ERCOT_v2.csv     # Processed dataset
+│   ├── Load data/                      # ERCOT load data (2018-2024)
+│   └── Weather data/                   # ASOS weather stations data
+├── Correlation Analysis/               # Feature analysis
+├── Data cleaning/                      # Data integration
 ├── Data Preprocessing/                 # EDA and feature engineering
-│   └── data_analytic_and_preprocessing.ipynb
-├── Notebook/                          # Main model training
-│   └── updated_EROCT.ipynb           # All model implementations and evaluation
-└── README.md                          # Project documentation
+└── Notebook/                          # Model training and evaluation
 ```
+
+## 🔬 Model Architectures
+
+### 1. **LSTM Baseline** - Simple LSTM with dropout regularization
+### 2. **CNN-LSTM** - Conv1D feature extraction + LSTM temporal modeling
+### 3. **Attention-LSTM** - LSTM with attention mechanism
+### 4. **Hybrid CNN-LSTM-Attention** - Combined architecture (Best: 96.77% R²)
 
 ## 🔬 Key Features
 
-### Data Analysis & Processing
-- **Comprehensive Data Integration**: 7 years of ERCOT load data + 3 ASOS weather stations
-- **Advanced Feature Engineering**: Temporal features (month, weekday, holidays)
-- **Time Series Analysis**: 24-hour lookback window for sequence modeling
-- **Normalization**: MinMax scaling (0-1) for optimal neural network performance
-- **Data Splitting**: 80% training, 10% validation, 10% testing
+- **Data Integration**: 7 years ERCOT load data + 3 weather stations
+- **Feature Engineering**: Temporal patterns, weather variables, US holidays
+- **Model Architecture**: Hybrid CNN-LSTM-Attention with multi-head attention
+- **Reproducible Results**: Fixed seeds (SEED=42) for consistent outcomes
 
-### Model Innovation
-- **Reproducible Results**: Fixed random seeds (SEED=42) + deterministic operations
-- **Progressive Architecture**: From basic LSTM to hybrid CNN-LSTM-Attention
-- **Advanced Regularization**: L2 regularization, dropout, batch normalization
-- **Multi-Head Attention**: 4-head attention mechanism with residual connections
-- **Early Stopping**: Prevents overfitting with patience monitoring
+## � License
 
-### Performance Optimization
-- **Custom Learning Rates**: Model-specific optimization (0.001 to 0.01)
-- **Advanced Callbacks**: Early stopping and model checkpointing
-- **Batch Processing**: Efficient batch size of 64 for stable training
-- **Layer Normalization**: Stabilizes training in deep architectures
-
-### Evaluation & Visualization
-- **Comprehensive Metrics**: R², MAE, RMSE, MAPE evaluation
-- **Performance Comparison**: Side-by-side model evaluation
-- **Prediction Visualization**: 100-day and 30-day window comparisons
-- **Training History**: Loss and metrics tracking over epochs
-
-## 🎯 Key Insights
-
-1. **Strong Temperature Correlation**: 0.55 correlation between temperature and electricity demand
-2. **Seasonal Patterns**: Clear daily and seasonal cycles in demand
-3. **Hybrid Superiority**: CNN-LSTM-Attention model significantly outperforms individual components
-4. **Attention Benefits**: Multi-head attention helps focus on relevant temporal patterns
-5. **Feature Engineering**: Weather and temporal features improve prediction accuracy
-
-## 🛠️ Technical Implementation
-
-### Data Preprocessing Pipeline
-```python
-# Data Integration
-- Load data: Native_Load_*.xlsx (2018-2024) → pandas DataFrame
-- Weather data: 3 ASOS stations → unified weather features
-- Feature engineering: temporal features + US holidays
-- Target: ERCOT electricity demand (MW)
-
-# Preprocessing Steps
-- MinMax normalization: (0-1 scaling) for neural network optimization
-- Sequence creation: create_sequences() with 24-hour lookback
-- Data splitting: 80% train / 10% validation / 10% test
-- Feature matrix: (samples, timesteps, features)
-```
-
-### Training Configuration
-```python
-# Universal Settings
-- Loss Function: Mean Squared Error (MSE)
-- Metrics: ['mae', 'mape'] + custom R² calculation
-- Batch Size: 64 (optimal for memory and convergence)
-- Max Epochs: 100 with EarlyStopping(patience=10)
-
-# Model-Specific Optimizers
-- LSTM Model: Adam(lr=0.001)
-- CNN-LSTM Model: Adam(lr=0.001)
-- Attention-LSTM: Adam(lr=0.001)
-- Hybrid Model: Adam(lr=0.001)
-```
-
-### Advanced Architecture Features
-```python
-# Hybrid CNN-LSTM-Attention Architecture Flow
-Input(timesteps, features)
-├── Conv1D(64, kernel=3, padding='causal') + BatchNorm
-├── Conv1D(64, kernel=3, padding='causal') + BatchNorm
-├── MaxPooling1D(2) + SpatialDropout1D(0.2)
-├── Bidirectional(LSTM(128, return_sequences=True))
-├── LSTM(64, return_sequences=True)
-├── MultiHeadAttention(heads=4, key_dim=64)
-├── Residual Connection + LayerNormalization
-├── GlobalAveragePooling1D()
-├── Dropout(0.3)
-└── Dense(1) → Output
-
-# Key Innovations
-- Causal padding: Prevents future data leakage
-- Residual connections: Improved gradient flow
-- Multi-head attention: Focus on relevant temporal patterns
-- L2 regularization: (1e-4) prevents overfitting
-```
+MIT License - See [LICENSE](LICENSE) for details.
 
 
 ## 🏗️ Model Architectures
