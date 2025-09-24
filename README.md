@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div align="center">
 
 # ⚡🧠 **Advanced Hybrid Multi-Scale Deep Learning Architecture** 🧠⚡
@@ -47,6 +48,9 @@
 ---
 
 ### 🌐 **Real-Time Demo & Visualizations**
+=======
+# ⚡ Hybrid Multi-Scale Deep Learning Enhanced Electricity Load Forecasting Using Attention-Based Convolutional Neural Network and LSTM Mode
+>>>>>>> b7ea05884af97c4fff41a9aa686c6a6bf2a49d9f
 
 <div align="center">
 
@@ -978,5 +982,6 @@ model, history = train_hybrid_model(X_train, y_train, config)
 ⭐ **Don't forget to star this repo if it helped your research!** ⭐
 
 </div>
+
 
 
