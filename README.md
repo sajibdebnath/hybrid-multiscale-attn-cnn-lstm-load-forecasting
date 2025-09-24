@@ -49,8 +49,6 @@
 > 💡 **Novel Architecture**: Hybrid CNN-LSTM-Attention model with **97% accuracy**
 > 📈 **7-Year Dataset**: Comprehensive ERCOT data (2018-2024) with weather integration
 > 🔬 **Advanced Features**: Multi-head attention, residual connections, and sophisticated preprocessing
-> 🎯 **Superior Performance**: Outperforms traditional models by **15-30%** across all metrics
-
 ---
 
 ## 🎯Overview
@@ -86,52 +84,6 @@ This research develops advanced deep learning models to predict electricity dema
 - **Final Dataset**: `Final_dataset_ERCOT_v2.csv` (preprocessed and cleaned)
 
 
-### 1. 🔹 **LSTM Model (Baseline)**
-```python
-- LSTM Layer 1: 4 units, return_sequences=True
-- LSTM Layer 2: 2 units
-- Dropout: 0.4
-- Dense Output: 1 unit
-- Optimizer: Adam (lr=0.001)
-```
-
-### 2. 🔸 **CNN-LSTM Model**
-```python
-- Conv1D: 32 filters, kernel_size=3, causal padding
-- BatchNormalization + MaxPooling1D(2) + SpatialDropout1D(0.3)
-- Bidirectional LSTM: 64 units, return_sequences=True
-- LSTM: 16 units
-- Dropout: 0.6
-- L2 Regularization: 1e-4
-- Optimizer: Adam (lr=0.01)
-```
-
-### 3. 🔶 **Attention-based LSTM**
-```python
-- LSTM Layer 1: 24 units, return_sequences=True, ReLU activation
-- LSTM Layer 2: 24 units, return_sequences=True, ReLU activation
-- Custom Attention Mechanism
-- Dropout: 0.5
-- L2 Regularization: 0.001
-- Optimizer: Adam (lr=0.001)
-```
-
-### 4. 🌟 **Hybrid CNN-LSTM-Attention (Proposed)**
-```python
-- Conv1D Block 1: 64 filters, kernel_size=3, causal padding
-- BatchNormalization
-- Conv1D Block 2: 64 filters, kernel_size=3, causal padding
-- BatchNormalization + MaxPooling1D(2) + SpatialDropout1D(0.2)
-- Bidirectional LSTM: 128 units, return_sequences=True
-- LSTM: 64 units, return_sequences=True
-- Multi-Head Attention: 4 heads, key_dim=64
-- Residual Connection + Layer Normalization
-- GlobalAveragePooling1D + Dropout(0.3)
-- Dense Output: 1 unit
-- L2 Regularization: 1e-4
-- Optimizer: Adam (lr=0.003)
-```
-
 ## 📈 Results
 
 <div align="center">
@@ -143,7 +95,7 @@ This research develops advanced deep learning models to predict electricity dema
 | 🔹 LSTM Baseline | 0.9042 | 2,393.47 | 3,298.21 | 3.84% |
 | 🔸 CNN-LSTM | 0.9380 | 1,984.19 | 2,654.50 | 3.51% |
 | 🔶 Attention-LSTM | 0.9270 | 2,193.70 | 2,878.90 | 3.92% |
-| **🌟 Hybrid CNN-LSTM-Attention** | **🥇 0.9677** | **🥇 1,430.55** | **🥇 1,915.17** | **🥇 2.53%** |
+| **🌟  Attention-based CNN-LSTM** | **🥇 0.9677** | **🥇 1,430.55** | **🥇 1,915.17** | **🥇 2.53%** |
 
 </div>
 
@@ -157,11 +109,6 @@ This research develops advanced deep learning models to predict electricity dema
 - **Mean Absolute Error**: 1,430.55 MW
 - **Root Mean Square Error**: 1,915.17 MW
 - **Mean Absolute Percentage Error**: 2.53%
-
-#### 🚀 **Performance Improvements**
-- **vs LSTM Baseline**: +6.35% R², -40.2% MAE, -41.9% RMSE, -34.1% MAPE
-- **vs CNN-LSTM**: +3.2% R², -27.9% MAE, -27.8% RMSE, -27.9% MAPE
-- **vs Attention-LSTM**: +4.4% R², -34.8% MAE, -33.5% RMSE, -35.5% MAPE
 
 </details>
 
@@ -196,27 +143,7 @@ os.environ['TF_DETERMINISTIC_OPS'] = '1'
 tf.config.experimental.enable_op_determinism()
 ```
 
-### 🔄 **Usage Workflow**
 
-<div align="center">
-
-```mermaid
-flowchart LR
-    A[📥 Raw Data] --> B[🧹 Data Cleaning]
-    B --> C[🔍 EDA Analysis]
-    C --> D[🔗 Correlation]
-    D --> E[🤖 Model Training]
-    E --> F[📊 Results]
-
-    style A fill:#e1f5fe
-    style B fill:#f3e5f5
-    style C fill:#e8f5e8
-    style D fill:#fff3e0
-    style E fill:#fce4ec
-    style F fill:#e0f2f1
-```
-
-</div>
 
 #### 1. 📥 **Data Cleaning & Integration**
    ```python
@@ -366,9 +293,9 @@ hybrid-multiscale-attn-cnn-lstm-load-forecasting/
 
 # Model-Specific Optimizers
 - LSTM Model: Adam(lr=0.001)
-- CNN-LSTM Model: Adam(lr=0.01)
+- CNN-LSTM Model: Adam(lr=0.001)
 - Attention-LSTM: Adam(lr=0.001)
-- Hybrid Model: Adam(lr=0.003)
+- Hybrid Model: Adam(lr=0.001)
 ```
 
 ### Advanced Architecture Features
@@ -471,38 +398,8 @@ Input(timesteps, features)
 - **Performance Metrics**: Industry-standard evaluation (R², MAE, RMSE, MAPE)
 - **Feature Engineering**: Domain knowledge integration for power systems
 
-## 👥 Contributing
 
-<div align="center">
 
-### 🤝 **Join Our Research Community!**
-
-</div>
-
-We welcome contributions from researchers, developers, and domain experts! Here's how you can help:
-
-<details>
-<summary><b>🛠️ Ways to Contribute</b></summary>
-
-#### 🔬 **Research Contributions**
-- 📊 **New Models**: Implement additional forecasting architectures
-- 🧪 **Experiments**: Try different feature engineering approaches
-- 📈 **Benchmarks**: Compare with other state-of-the-art methods
-- 📝 **Documentation**: Improve model explanations and tutorials
-
-#### 💻 **Technical Contributions**
-- 🐛 **Bug Fixes**: Report and fix issues in the codebase
-- ⚡ **Optimizations**: Improve model training efficiency
-- 🔧 **Features**: Add new functionality or analysis tools
-- 🎨 **UI/UX**: Enhance visualizations and reporting
-
-#### 📚 **Community Support**
-- ❓ **Q&A**: Help answer questions in issues and discussions
-- 📖 **Tutorials**: Create learning materials for beginners
-- 🌍 **Outreach**: Share the project with other researchers
-- 🔗 **Integration**: Connect with other forecasting frameworks
-
-</details>
 
 ### 🚀 **Getting Involved**
 
@@ -581,17 +478,4 @@ If you use this work in your research, please cite our paper:
 *This project demonstrates state-of-the-art deep learning techniques for electricity load forecasting and serves as a comprehensive foundation for similar time series prediction tasks in the energy sector. Our hybrid CNN-LSTM-Attention model achieves superior performance through innovative architecture design and thorough data preprocessing.*
 
 ---
-
-### 🏆 **Achievement Badge**
-
-![Performance](https://img.shields.io/badge/R²_Score-96.77%25-brightgreen?style=for-the-badge)
-![Error](https://img.shields.io/badge/MAPE-2.53%25-blue?style=for-the-badge)
-![Status](https://img.shields.io/badge/Status-Production_Ready-success?style=for-the-badge)
-
-**📊 Built with ❤️ for the Energy Forecasting Community**
-
-⭐ **Don't forget to star this repo if it helped your research!** ⭐
-
-</div>
-
 
