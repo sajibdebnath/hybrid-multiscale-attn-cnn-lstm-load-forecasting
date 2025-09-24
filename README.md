@@ -3,10 +3,10 @@
 <div align="center">
 
 <!-- Repository Stats -->
-![GitHub stars](https://img.shields.io/github/stars/uzzal2200/-Electricity-Load-Forecasting-?style=for-the-badge&color=yellow)
-![GitHub forks](https://img.shields.io/github/forks/uzzal2200/-Electricity-Load-Forecasting-?style=for-the-badge&color=blue)
-![GitHub watchers](https://img.shields.io/github/watchers/uzzal2200/-Electricity-Load-Forecasting-?style=for-the-badge&color=green)
-![GitHub issues](https://img.shields.io/github/issues/uzzal2200/-Electricity-Load-Forecasting-?style=for-the-badge&color=red)
+![GitHub stars](https://img.shields.io/github/stars/sajibdebnath/hybrid-multiscale-attn-cnn-lstm-load-forecasting?style=for-the-badge&color=yellow)
+![GitHub forks](https://img.shields.io/github/forks/sajibdebnath/hybrid-multiscale-attn-cnn-lstm-load-forecasting?style=for-the-badge&color=blue)
+![GitHub watchers](https://img.shields.io/github/watchers/sajibdebnath/hybrid-multiscale-attn-cnn-lstm-load-forecasting?style=for-the-badge&color=green)
+![GitHub issues](https://img.shields.io/github/issues/sajibdebnath/hybrid-multiscale-attn-cnn-lstm-load-forecasting?style=for-the-badge&color=red)
 
 <!-- Tech Stack Badges -->
 ![Python](https://img.shields.io/badge/python-v3.7+-blue.svg?style=flat-square&logo=python)
@@ -20,7 +20,7 @@
 ![License](https://img.shields.io/badge/license-MIT-green.svg?style=flat-square)
 ![Status](https://img.shields.io/badge/status-active-brightgreen.svg?style=flat-square)
 ![Contributions](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat-square)
-![Last Commit](https://img.shields.io/github/last-commit/uzzal2200/-Electricity-Load-Forecasting-?style=flat-square)
+![Last Commit](https://img.shields.io/github/last-commit/sajibdebnath/hybrid-multiscale-attn-cnn-lstm-load-forecasting?style=flat-square)
 
 **🏆 Best Performance: R² = 0.9677 | MAPE = 2.53% | State-of-the-Art Results 🏆**
 
@@ -33,39 +33,23 @@
 ---
 
 ## 📋 Table of Contents
-
-<details>
-<summary><b>🗂️ Click to expand navigation</b></summary>
-
-- [🌟 Highlights](#-highlights)
-- [🎯 Project Overview](#overview)
+- [🎯 Overview](#overview)
 - [📊 Dataset](#-dataset)
-- [🏗️ Model Architectures](#️-model-architectures)
 - [📈 Results](#-results)
+- [🛠️ Technology Stack](#️-technology-stack)
+- [🏗️ Model Architectures](#️-model-architectures)
 - [🚀 Getting Started](#-getting-started)
 - [📁 Project Structure](#-project-structure)
 - [🔬 Key Features](#-key-features)
 - [🎯 Key Insights](#-key-insights)
 - [🛠️ Technical Implementation](#️-technical-implementation)
-- [📊 Performance Analysis](#-performance-analysis)
-- [🔮 Future Research Directions](#-future-research-directions)
-- [📚 References & Data Sources](#-references--data-sources)
-- [👥 Contributing](#-contributing)
+- [🔮 Future Research](#-future-research-directions)
+- [📚 References](#-references--data-sources)
 - [📄 License](#-license)
-- [📞 Contact & Citation](#-contact--citation)
-
-</details>
 
 ---
 
-## 🌟 **Highlights**
-
-> 💡 **Novel Architecture**: Hybrid CNN-LSTM-Attention model with **97% accuracy**
-> 📈 **7-Year Dataset**: Comprehensive ERCOT data (2018-2024) with weather integration
-> 🔬 **Advanced Features**: Multi-head attention, residual connections, and sophisticated preprocessing
----
-
-## 🎯Overview
+## 🎯 Overview
 
 This research develops advanced deep learning models to predict electricity demand using historical load data and meteorological variables. The study compares four different neural network architectures and demonstrates that the proposed hybrid CNN-LSTM-Attention model significantly outperforms traditional approaches, achieving exceptional accuracy with comprehensive feature engineering and data preprocessing.
 
@@ -104,38 +88,12 @@ This research develops advanced deep learning models to predict electricity dema
 
 ### 🏆 **Performance Comparison**
 
-<<<<<<< HEAD
 | 🤖 Model | 📊 R² Score | 📉 MAE (MW) | 📐 RMSE (MW) | 🎯 MAPE |
 |-----------|-------------|-------------|--------------|---------|
 | 🔹 LSTM Baseline | 0.9042 | 2,393.47 | 3,298.21 | 3.84% |
 | 🔸 CNN-LSTM | 0.9380 | 1,984.19 | 2,654.50 | 3.51% |
 | 🔶 Attention-LSTM | 0.9270 | 2,193.70 | 2,878.90 | 3.92% |
-| **🌟  Attention-based CNN-LSTM** | **🥇 0.9677** | **🥇 1,430.55** | **🥇 1,915.17** | **🥇 2.53%** |
-=======
-```mermaid
-graph TB
-    subgraph "📊 Model Performance Metrics"
-        A[🔹 LSTM <br/>R²: 0.9042<br/>MAPE: 3.84%]
-        B[🔸 CNN-LSTM<br/>R²: 0.9380<br/>MAPE: 3.51%]
-        C[🔶 Attention-LSTM<br/>R²: 0.9270<br/>MAPE: 3.92%]
-        D[🌟 Hybrid Model<br/>R²: 0.9677<br/>MAPE: 2.53%]
-
-        A --> E[Performance<br/>Ranking]
-        B --> E
-        C --> E
-        D --> E
-
-        style D fill:#ff6b6b,stroke:#333,stroke-width:3px,color:#fff
-        style E fill:#4ecdc4,stroke:#333,stroke-width:2px
-    end
-
-Accuracy Comparison (R² Score):
-🔹 LSTM   ████████████████████████████████████████████████████████████████████████████████████████░░░░░░░░░░░░░░░░ 90.42%
-🔸 CNN-LSTM         ███████████████████████████████████████████████████████████████████████████████████████████████████░░░░░ 93.80%
-🔶 Attention-LSTM   ██████████████████████████████████████████████████████████████████████████████████████████████░░░░░░░░░░ 92.70%
-🌟 Attention-based CNN-LSTM    ████████████████████████████████████████████████████████████████████████████████████████████████████████ 96.77%
-```
->>>>>>> ff9eb14b18840c943723bde2600c1833c7a73697
+| **🌟 Hybrid CNN-LSTM-Attention** | **🥇 0.9677** | **🥇 1,430.55** | **🥇 1,915.17** | **🥇 2.53%** |
 
 </div>
 
@@ -313,9 +271,17 @@ tf.config.experimental.enable_op_determinism()
    ```
 
 
+### 🚀 **Quick Start**
 ```bash
-# 🚀 One-liner setup
-git clone https://github.com/sajibdebnath/hybrid-multiscale-attn-cnn-lstm-load-forecasting.git && cd hybrid-multiscale-attn-cnn-lstm-load-forecasting && pip install -r requirements.txt
+# Clone repository
+git clone https://github.com/sajibdebnath/hybrid-multiscale-attn-cnn-lstm-load-forecasting.git
+cd hybrid-multiscale-attn-cnn-lstm-load-forecasting
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Run the main notebook
+jupyter notebook "Notebook/updated_EROCT.ipynb"
 ```
 
 > 🎯 **Pro Tip**: All models are trained automatically with reproducible results using SEED=42!
@@ -447,53 +413,29 @@ Input(timesteps, features)
 ```
 
 
-#### 🔍 **Model Training Progress**
-```mermaid
-graph LR
-    A[📥 Data Input<br/>61,368 samples] --> B[🔄 Preprocessing<br/>Normalization & Sequences]
-    B --> C[🎯 Training<br/>80% split]
-    C --> D[✅ Validation<br/>10% split]
-    D --> E[🧪 Testing<br/>10% split]
-    E --> F[📊 Results<br/>R²: 0.9677]
+## 🏗️ Model Architectures
 
-    style A fill:#e1f5fe
-    style F fill:#c8e6c9
-```
+### 1. � **LSTM Baseline**
+- Simple LSTM with 2 layers (4→2 units)
+- Dropout for regularization
+- Basic temporal modeling
 
-#### 🏆 **Key Performance Indicators**
-| 📊 Metric | 🎯 Target | 📈 Achieved | 🏅 Status |
-|-----------|----------|-------------|-----------|
-| **Accuracy (R²)** | > 95% | **96.77%** | ✅ **Excellent** |
-| **MAPE Error** | < 5% | **2.53%** | ✅ **Outstanding** |
-| **Training Time** | < 30 min | **~25 min** | ✅ **Efficient** |
-| **Model Size** | < 50MB | **~35MB** | ✅ **Optimal** |
+### 2. 🔸 **CNN-LSTM**
+- Conv1D for feature extraction
+- Bidirectional LSTM for temporal dependencies
+- Batch normalization and dropout
 
-</details>
+### 3. 🔶 **Attention-LSTM**
+- LSTM with custom attention mechanism
+- Focus on important temporal patterns
+- L2 regularization
 
-### 🎮 **Interactive Demo**
-
-> 🚀 **Try the Model**: Run the Jupyter notebooks to see live predictions and interactive charts!
-
-<div align="center">
-
-```mermaid
-journey
-    title 🎯 User Experience Journey
-    section Data Exploration
-      Load Dataset          : 5: User
-      Visualize Patterns    : 4: User
-      Correlation Analysis  : 5: User
-    section Model Training
-      Train LSTM            : 3: User
-      Train CNN-LSTM        : 4: User
-      Train Hybrid Model    : 5: User
-    section Results
-      View Predictions      : 5: User
-      Compare Performance   : 5: User
-      Export Results        : 4: User
-```
-
-</div>
+### 4. � **Hybrid CNN-LSTM-Attention** (Proposed)
+- Conv1D feature extraction layers
+- Bidirectional LSTM for sequence modeling
+- Multi-head attention (4 heads)
+- Residual connections + layer normalization
+- Superior performance with 96.77% accuracy
 
 
 ## �🔮 Future Research Directions
@@ -541,13 +483,28 @@ journey
 
 
 
-### 🚀 **Getting Involved**
+## � Contributing
 
-1. 🍴 **Fork** the repository
-2. 🌟 **Star** the project if you find it useful
-3. 🐛 **Report issues** or suggest improvements
-4. 💡 **Submit pull requests** with your enhancements
-5. 📢 **Share** with your network and research community
+Contributions are welcome! Please feel free to:
+- 🍴 Fork the repository
+- 🌟 Star the project if you find it useful
+- 🐛 Report issues or suggest improvements
+- 💡 Submit pull requests with enhancements
+- 📢 Share with your research community
+
+## 📞 Citation
+
+If you use this work in your research, please cite:
+
+```bibtex
+@article{hybrid_cnn_lstm_attention_2024,
+  title={Hybrid Multi-Scale Deep Learning Enhanced Electricity Load Forecasting Using Attention-Based CNN-LSTM},
+  author={Sajib Debnath},
+  journal={Energy Forecasting Research},
+  year={2024},
+  note={ERCOT Load Forecasting with 96.77\% Accuracy}
+}
+```
 
 ---
 
@@ -593,8 +550,6 @@ Please ensure proper attribution when using this code or data in your work.
 
 ---
 
-<<<<<<< HEAD
-=======
 ### 🏆 **Achievement Badge**
 
 ![Performance](https://img.shields.io/badge/R²_Score-96.77%25-brightgreen?style=for-the-badge)
@@ -606,7 +561,3 @@ Please ensure proper attribution when using this code or data in your work.
 ⭐ **Don't forget to star this repo if it helped your research!** ⭐
 
 </div>
-
-
-
->>>>>>> ff9eb14b18840c943723bde2600c1833c7a73697
