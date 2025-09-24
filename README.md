@@ -1,4 +1,4 @@
-# ⚡ Hybrid Multiscale Attention CNN-LSTM Load Forecasting
+# ⚡ Hybrid Multi-Scale Deep Learning Enhanced Electricity Load Forecasting Using Attention-Based Convolutional Neural Network and LSTM Mode
 
 <div align="center">
 
@@ -614,5 +614,6 @@ If you use this work in your research, please cite our paper:
 ⭐ **Don't forget to star this repo if it helped your research!** ⭐
 
 </div>
+
 
 
