@@ -67,14 +67,31 @@ jupyter notebook "Notebook/updated_EROCT.ipynb"
 ## 📁 Project Structure
 
 ```
+hybrid-multiscale-attn-cnn-lstm-load-forecasting/
 ├── Data/                               # Dataset files
-│   ├── Final_dataset_ERCOT_v2.csv     # Processed dataset
-│   ├── Load data/                      # ERCOT load data (2018-2024)
-│   └── Weather data/                   # ASOS weather stations data
-├── Correlation Analysis/               # Feature analysis
-├── Data cleaning/                      # Data integration
+│   ├── Final_dataset_ERCOT_v2.csv     # Main processed dataset
+│   ├── Load data/                      # Raw ERCOT load data (2018-2024)
+│   │   ├── Native_Load_2018.xlsx
+│   │   ├── Native_Load_2019.xlsx
+│   │   ├── Native_Load_2020.xlsx
+│   │   ├── Native_Load_2021.xlsx
+│   │   ├── Native_Load_2022.xlsx
+│   │   ├── Native_Load_2023.xlsx
+│   │   └── Native_Load_2024.xlsx
+│   └── Weather data/                   # Meteorological data from ASOS stations
+│       ├── asos_hourly_BKS.csv        # Blackland Army Airfield
+│       ├── asos_hourly_JDD.csv        # Laredo International Airport
+│       ├── asos_hourly_TME.csv        # Houston Executive Airport
+│       └── asos_weather_data.csv      # Combined weather dataset
+├── Correlation Analysis/               # Feature correlation analysis
+│   └── Correlation Analysis.ipynb
+├── Data cleaning/                      # Data cleaning and integration
+│   └── ERCOT_data_cleaning.ipynb     # Load and weather data integration
 ├── Data Preprocessing/                 # EDA and feature engineering
-└── Notebook/                          # Model training and evaluation
+│   └── data_analytic_and_preprocessing.ipynb
+├── Notebook/                          # Main model training
+│   └── updated_EROCT.ipynb           # All model implementations and evaluation
+└── README.md                          # Project documentation
 ```
 
 ## 🔬 Model Architectures
@@ -113,7 +130,7 @@ MIT License - See [LICENSE](LICENSE) for details.
 - Focus on important temporal patterns
 - L2 regularization
 
-### 4. � **Hybrid CNN-LSTM-Attention** (Proposed)
+### 4. � ** Attention-based CNN-LSTM** (Proposed)
 - Conv1D feature extraction layers
 - Bidirectional LSTM for sequence modeling
 - Multi-head attention (4 heads)
@@ -165,32 +182,6 @@ MIT License - See [LICENSE](LICENSE) for details.
 
 
 
-
-## � Contributing
-
-Contributions are welcome! Please feel free to:
-- 🍴 Fork the repository
-- 🌟 Star the project if you find it useful
-- 🐛 Report issues or suggest improvements
-- 💡 Submit pull requests with enhancements
-- 📢 Share with your research community
-
-## 📞 Citation
-
-If you use this work in your research, please cite:
-
-```bibtex
-@article{hybrid_cnn_lstm_attention_2024,
-  title={Hybrid Multi-Scale Deep Learning Enhanced Electricity Load Forecasting Using Attention-Based CNN-LSTM},
-  author={Sajib Debnath},
-  journal={Energy Forecasting Research},
-  year={2024},
-  note={ERCOT Load Forecasting with 96.77\% Accuracy}
-}
-```
-
----
-
 ## 📄 License
 
 <div align="center">
@@ -225,22 +216,4 @@ Please ensure proper attribution when using this code or data in your work.
 
 <div align="center">
 
-### 🎯 **Research Impact**
 
-**⚡ Advancing Energy Forecasting Through Deep Learning Innovation**
-
-*This project demonstrates state-of-the-art deep learning techniques for electricity load forecasting and serves as a comprehensive foundation for similar time series prediction tasks in the energy sector. Our hybrid CNN-LSTM-Attention model achieves superior performance through innovative architecture design and thorough data preprocessing.*
-
----
-
-### 🏆 **Achievement Badge**
-
-![Performance](https://img.shields.io/badge/R²_Score-96.77%25-brightgreen?style=for-the-badge)
-![Error](https://img.shields.io/badge/MAPE-2.53%25-blue?style=for-the-badge)
-![Status](https://img.shields.io/badge/Status-Production_Ready-success?style=for-the-badge)
-
-**📊 Built with ❤️ for the Energy Forecasting Community**
-
-⭐ **Don't forget to star this repo if it helped your research!** ⭐
-
-</div>
