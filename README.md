@@ -115,7 +115,7 @@ MIT License - See [LICENSE](LICENSE) for details.
 
 ## 🏗️ Model Architectures
 
-### 1. � **LSTM Baseline**
+### 1. � **LSTM **
 - Simple LSTM with 2 layers (4→2 units)
 - Dropout for regularization
 - Basic temporal modeling
@@ -215,6 +215,7 @@ Please ensure proper attribution when using this code or data in your work.
 ---
 
 <div align="center">
+
 
 
 
