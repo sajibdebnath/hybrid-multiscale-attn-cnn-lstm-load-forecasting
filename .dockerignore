@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+.git
+.venv
+env/
+venv/
+*.egg-info
+dist/
+build/
+README_DEPLOY.md

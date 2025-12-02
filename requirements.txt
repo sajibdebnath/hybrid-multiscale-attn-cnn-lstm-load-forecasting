@@ -1,0 +1,10 @@
+fastapi==0.98.0
+uvicorn[standard]==0.22.0
+numpy==1.26.0
+pandas==2.1.2
+# Use joblib and scikit-learn versions compatible with Python 3.10
+joblib==1.5.2
+scikit-learn==1.5.2
+# TensorFlow can be large; install only if you need local model inference
+# tensorflow==2.12.0
+requests==2.31.0
