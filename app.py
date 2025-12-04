@@ -42,13 +42,17 @@ def run_prediction():
 
     target_idx = FEATURES.index(TARGET_FEATURE)
     arr = np.zeros((LOOK_BACK, len(FEATURES)), dtype=float)
-    weather_vals = np.array(st.session_state.rows_weather)
-    if weather_vals.shape != (LOOK_BACK, len(FEATURES_NO_TARGET)):
+    # Build a DataFrame from the editor-stored rows. The editor stores empty cells
+    # as empty strings to keep the UI visually blank; convert to numeric (0 for
+    # blanks/non-numeric) only for prediction.
+    df_weather = pd.DataFrame(st.session_state.rows_weather, columns=FEATURES_NO_TARGET)
+    df_weather = df_weather.replace("", np.nan).apply(pd.to_numeric, errors="coerce").fillna(0)
+    if df_weather.shape != (LOOK_BACK, len(FEATURES_NO_TARGET)):
         st.error(f"Weather input must be {LOOK_BACK} rows × {len(FEATURES_NO_TARGET)} columns")
         return None
 
     for j, feat in enumerate(FEATURES_NO_TARGET):
-        arr[:, FEATURES.index(feat)] = weather_vals[:, j]
+        arr[:, FEATURES.index(feat)] = df_weather.iloc[:, j].values
 
     try:
         arr_df = pd.DataFrame(arr, columns=FEATURES)
@@ -118,10 +122,11 @@ with col_right:
     # present exactly LOOK_BACK rows (blank by default) so user can fill values
     dfw = pd.DataFrame(st.session_state.rows_weather, columns=FEATURES_NO_TARGET)
     edited_w = st.data_editor(dfw, num_rows=LOOK_BACK, use_container_width=True)
-    # convert empty strings or non-numeric to 0 before saving
-    edited_w = edited_w.replace("", 0)
-    edited_w = edited_w.apply(pd.to_numeric, errors="coerce").fillna(0)
-    st.session_state.rows_weather = edited_w.values.tolist()
+    # Keep blanks in the editor so the right column remains visually empty by
+    # default. Store empty cells as empty strings (not zeros). We'll convert to
+    # numeric zeros only at prediction time.
+    edited_w = edited_w.where(pd.notnull(edited_w), "")
+    st.session_state.rows_weather = edited_w.astype(object).values.tolist()
 
     st.markdown("---")
     if st.button("Predict", key="predict_right"):
