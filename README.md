@@ -12,6 +12,8 @@
 
 </div>
 
+> NOTE: A supplemental file with detailed numeric tables and demo instructions is available: `README_EXTRA.md` (see project root).
+
 ---
 
 ## 🎯 Overview
@@ -28,12 +30,22 @@ Deep learning models for electricity demand forecasting using ERCOT data (2018-2
 
 ## 📈 Results
 
-| Model | R² Score | MAPE | MAE (MW) | RMSE (MW) |
-|-------|----------|------|----------|-----------|
-| LSTM | 0.9042 | 3.84% | 2,393.47 | 3,298.21 |
-| CNN-LSTM | 0.9380 | 3.51% | 1,984.19 | 2,654.50 |
-| Attention-LSTM | 0.9270 | 3.92% | 2,193.70 | 2,878.90 |
-| **Hybrid CNN-LSTM-Attention** | **0.9677** | **2.53%** | **1,430.55** | **1,915.17** |
+| Model | MAE (MW) | RMSE (MW) | MAPE (%) | sMAPE (%) | PSNR (dB) | R² |
+|-------|----------:|----------:|---------:|----------:|----------:|----:|
+| LSTM | 2393.4662 | 3298.2063 | 3.8416 | 3.9473 | 28.2431 | 0.9042 |
+| CNN-LSTM | 1984.1900 | 2654.4977 | 3.5111 | 3.4465 | 30.1290 | 0.9380 |
+| Attention-LSTM | 2193.6967 | 2878.8981 | 3.9219 | 3.9617 | 29.4241 | 0.9270 |
+| **Attention-based CNN-LSTM (Proposed / Hybrid)** | **1430.5544** | **1915.1668** | **2.5278** | **2.5063** | **32.9645** | **0.9677** |
+
+
+### Model Size & Performance
+
+| Model | Params (M) | Train Time (s/epoch) | Inference Time (ms) | Peak Mem (MB, GPU) |
+|-------:|----------:|--------------------:|--------------------:|-------------------:|
+| LSTM | 0.0003 | 2.132 | 71.19 | 84.7 |
+| CNN-LSTM | 0.0602 | 5.034 | 66.26 | 148.9 |
+| Attention-LSTM | 0.0088 | 6.995 | 80.74 | 172.2 |
+| Proposed Hybrid (Attention-based CNN-LSTM) | 0.3614 | 6.327 | 66.60 | 172.8 |
 
 
 ## 🛠️ Technology Stack
