@@ -5,20 +5,52 @@
 ![Python](https://img.shields.io/badge/python-3.8+-blue.svg)
 ![TensorFlow](https://img.shields.io/badge/TensorFlow-2.x-orange.svg)
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
+![IEEE Access](https://img.shields.io/badge/IEEE%20Access-2026-blue.svg)
+![Publication](https://img.shields.io/badge/Status-Published-success.svg)
 
 **🏆 R² = 0.9677 | MAPE = 2.53%**
 
 *Deep learning models for electricity demand forecasting using ERCOT data and weather features*
 
-</div>
+**📄 Published in IEEE Access (2026)**
 
-> NOTE: A supplemental file with detailed numeric tables and demo instructions is available: `README_EXTRA.md` (see project root).
+</div>
 
 ---
 
 ## 🎯 Overview
 
 Deep learning models for electricity demand forecasting using ERCOT data (2018-2024) and weather features. The hybrid CNN-LSTM-Attention model achieves 96.77% accuracy by combining convolutional layers, LSTM networks, and attention mechanisms.
+
+---
+
+## 📄 Publication
+
+**Published in IEEE Access, 2026**
+
+### Authors
+- **Sajib Debnath**
+- **Md Uzzal Mia**
+- **Md Abubakkar**
+- **Md Robiul Islam**
+- **Md Shafiqul Islam Mridul**
+- **Arindam Kishor Biswas**
+
+### Abstract
+Accurate electricity load forecasting is crucial for efficient grid management, resource allocation, and maintaining stability, particularly in the face of increasing climate variability and extreme weather events. Traditional forecasting models often struggle to capture the complex, nonlinear, and sudden transitions in electricity loads influenced by meteorological factors. This study proposes a novel hybrid framework, termed as Attention-based CNN-LSTM model, for multivariate time series forecasting of daily urban electricity demand. This framework integrates a Convolutional Neural Network (CNN), Long Short-Term Memory (LSTM) network, and Attention Mechanism (AM) within an encoder-decoder architecture. The CNN layers were used to extract multiscale features and correlations between multivariate variables, whereas the LSTM layers captured the temporal characteristics. The Attention Mechanism assigns varying levels of importance to different time steps within the input sequence, enhancing the model's ability to focus on relevant information. The proposed model was trained and evaluated using historical ERCOT electricity demand and corresponding weather data from 2018 to 2024, consisting of 61,368 hourly data points. Comparative experiments with standalone LSTM, CNN-LSTM, and attention-based LSTM models demonstrated that the proposed hybrid model achieved superior prediction performance, characterized by lower MAE, MSE, MAPE, sMAPE, and a higher correlation coefficient (R²) of 0.9677 and PSNR, particularly during extreme weather conditions. This framework offers a robust solution for enhancing grid resilience and enabling climate-resilient energy planning.
+
+### Citation
+```bibtex
+@article{debnath2026hybrid,
+  title={Hybrid Multi-Scale Deep Learning Enhanced Electricity Load Forecasting Using Attention-Based Convolutional Neural Network and LSTM Model},
+  author={Debnath, Sajib and Mia, Md Uzzal and Abubakkar, Md and Islam, Md Robiul and Mridul, Md Shafiqul Islam and Biswas, Arindam Kishor},
+  journal={IEEE Access},
+  year={2026},
+  publisher={IEEE}
+}
+```
+
+---
 
 ## 📊 Dataset
 
@@ -195,6 +227,14 @@ MIT License - See [LICENSE](LICENSE) for details.
 
 
 ## 📄 License
+
+## 📖 How to Cite This Work
+
+If you use this code or methodology in your research, please cite our paper:
+
+**Debnath, S., Mia, M. U., Abubakkar, M., Islam, M. R., Mridul, M. S. I., & Biswas, A. K. (2026). Hybrid Multi-Scale Deep Learning Enhanced Electricity Load Forecasting Using Attention-Based Convolutional Neural Network and LSTM Model. *IEEE Access*, 2026.**
+
+---
 
 <div align="center">
 
